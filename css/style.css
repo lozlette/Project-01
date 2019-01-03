@@ -1,2 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
 h1{color:#ffdab9}
 /*# sourceMappingURL=style.css.map */
+
+body {
+  text-align: center;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-height: 802px;
+  max-width: 802px;
+  align-items: center;
+  border: 1px solid black;
+  margin:auto;
+}
+
+.square {
+height: 100px;
+width: 100px;
+flex-wrap: wrap;
+border: 1px solid black;
+}
