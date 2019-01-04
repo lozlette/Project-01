@@ -24,7 +24,7 @@ width: 100px;
 flex-wrap: wrap;
 border: 1px solid black;
 }
-.player1 {
+.player1Counter {
   background-color: red;
   height: 80px;
   width: 80px;
@@ -32,7 +32,7 @@ border: 1px solid black;
   margin: auto;
 }
 
-.player2 {
+.player2Counter {
   background-color: blue;
   height: 80px;
   width: 80px;
