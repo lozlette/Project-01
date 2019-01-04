@@ -24,3 +24,26 @@ width: 100px;
 flex-wrap: wrap;
 border: 1px solid black;
 }
+.player1 {
+  background-color: red;
+  height: 80px;
+  width: 80px;
+  border-radius: 25px;
+  opacity: 0;
+}
+
+.player2 {
+  background-color: blue;
+  height: 80px;
+  width: 80px;
+  border-radius: 25px;
+  opacity: 0;
+}
+
+.square.snake {
+  background-color: green;
+}
+
+.square.ladder {
+  background-color: grey;
+}
