@@ -7,17 +7,20 @@ document.addEventListener('DOMContentLoaded', () => {
   let topLadder1
   let topLadder2
   let topLadder3
+  let bottomSnake1
+  let bottomSnake2
+  let bottomSnake3
 
   // let player2Position = 0
 
   // if square has a class of snake or ladder, replace it with class of player1
-  function removeSnakeOrLadderClass(){
-    if (squareToMoveTo.classList.contains('snake')){
-      squareToMoveTo.classList.remove('snake')
-    } else if (squareToMoveTo.classList.contains('ladder')){
-      squareToMoveTo.classList.remove('ladder')
-    }
-  }
+  // function removeSnakeOrLadderClass(){
+  //   if (squareToMoveTo.classList.contains('snake')){
+  //     squareToMoveTo.classList.remove('snake')
+  //   } else if (squareToMoveTo.classList.contains('ladder')){
+  //     squareToMoveTo.classList.remove('ladder')
+  //   }
+  // }
 
   // Change player1position to reflect move up the ladder
   function newPositionAfterSnakeOrLadder(){
@@ -27,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
       player1Position = 27
     } else if (squareToMoveTo.dataset.id === '34'){
       player1Position = 60
+    } else if (squareToMoveTo.dataset.id === '18'){
+      player1Position = 16
+    } else if (squareToMoveTo.dataset.id === '56'){
+      player1Position = 42
+    } else if (squareToMoveTo.dataset.id === '63'){
+      player1Position = 22
     }
   }
 
@@ -63,6 +72,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  function snakes(){
+    if (squareToMoveTo.dataset.id === '18') {
+      setTimeout(() => {
+        squareToMoveTo.classList.remove('player1Counter')
+        bottomSnake1 = document.querySelector(`[data-id="${16}"]`)
+        newPositionAfterSnakeOrLadder()
+        bottomSnake1.classList.add('player1Counter')
+        console.log('Oh dear! Go to the bottom of the snake')
+      }, 1500)
+    } else if (squareToMoveTo.dataset.id === '56') {
+      setTimeout(() => {
+        squareToMoveTo.classList.remove('player1Counter')
+        bottomSnake2 = document.querySelector(`[data-id="${42}"]`)
+        newPositionAfterSnakeOrLadder()
+        bottomSnake2.classList.add('player1Counter')
+        console.log(bottomSnake2)
+        console.log('Oh dear! Go to the bottom of the snake')
+      }, 1500)
+    } else if (squareToMoveTo.dataset.id === '63') {
+      setTimeout(() => {
+        squareToMoveTo.classList.remove('player1Counter')
+        bottomSnake3 = document.querySelector(`[data-id="${22}"]`)
+        newPositionAfterSnakeOrLadder()
+        bottomSnake3.classList.add('player1Counter')
+        console.log(bottomSnake3)
+        console.log('Oh dear! Go to the bottom of the snake')
+      }, 1500)
+    }
+  }
+
   //remove counter from previous turn's square
   function clearPreviousSquare(){
     squareToMoveTo.classList.remove('player1Counter')
@@ -72,10 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
       topLadder2.classList.remove('player1Counter')
     } else if (topLadder3.classList.contains('player1Counter')){
       topLadder3.classList.remove('player1Counter')
+    } else if (bottomSnake1.classList.contains('player1Counter')){
+      bottomSnake1.classList.remove('player1Counter')
+    } else if (bottomSnake2.classList.contains('player1Counter')){
+      bottomSnake2.classList.remove('player1Counter')
+    } else if (bottomSnake3.classList.contains('player1Counter')){
+      bottomSnake3.classList.remove('player1Counter')
     }
   }
-
-  //
 
   function rollDice() {
     //generate a random number between 1 and 6
@@ -86,8 +129,9 @@ document.addEventListener('DOMContentLoaded', () => {
     squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
     //add class of player1 to squareToMoveTo
     squareToMoveTo.classList.add('player1Counter')
-    removeSnakeOrLadderClass()
+    // removeSnakeOrLadderClass()
     ladders()
+    snakes()
     console.log(player1NewPosition)
   }
 
