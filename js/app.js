@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let squareToMoveTo
   let player1Position = 0
   let player1NewPosition
+  let topLadder1
+
   // let player2Position = 1
 
   //if square has a class of snake or ladder, replace it with class of player1
@@ -16,12 +18,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  //if squareToMoveTo is bottom of ladder1 move to top of ladder
   function ladder(){
-    //if squareToMoveTo is bottom of ladder1 move to top of ladder- using data id?
     if(squareToMoveTo.dataset.id === '7') {
-      console.log('bottom of ladder!')
+      //after a delay of 1.5 seconds remove player1Counter from that square
+      setTimeout(() => {
+        squareToMoveTo.classList.remove('player1Counter')
+        // add class to square with data-id of 9
+        topLadder1 = document.querySelector(`[data-id="${9}"]`)
+        topLadder1.classList.add('player1Counter')
+        removeSnakeOrLadderClass()
+        console.log(topLadder1)
+        console.log('You get to go up the ladder!')
+      }, 1500)
     }
   }
+
+  //remove counter from previous square
+  function clearPreviousSquare(){
+    squareToMoveTo.classList.remove('player1Counter')
+    if (topLadder1.classList.contains('player1Counter')){
+      topLadder1.classList.remove('player1Counter')
+    }
+  }
+
   function rollDice() {
     //generate a random number between 1 and 6
     const diceRoll = Math.floor(Math.random() * 6) + 1
@@ -33,11 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
     squareToMoveTo.classList.add('player1Counter')
     removeSnakeOrLadderClass()
     ladder()
-    //remove counter from previous square
-    // if (player1Position){
-    //   squareToMoveTo.classList.remove('player1')
-    // }
     console.log(squareToMoveTo)
   }
-  dice.addEventListener('click', rollDice)
+
+  dice.addEventListener('mouseup', rollDice)
+  dice.addEventListener('mousedown', clearPreviousSquare)
 })
