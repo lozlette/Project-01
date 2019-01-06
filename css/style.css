@@ -30,11 +30,7 @@ border: 1px solid black;
   width: 80px;
   border-radius: 50px;
   margin: auto;
-  /* height: 100px;
-  width: 100px;
-  flex-wrap: wrap;
-  border: 1px solid black;
-  background-color: red; */
+  opacity: 0.5;
 }
 
 .player2Counter {
@@ -42,6 +38,8 @@ border: 1px solid black;
   height: 80px;
   width: 80px;
   border-radius: 50px;
+  margin: auto;
+  opacity: 0.5;
 }
 
 .square.snake {
