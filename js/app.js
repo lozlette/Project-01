@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dice = document.querySelector('.dice-button')
   const p = document.querySelector('p')
+  // const counter1 = document.querySelector('player1Counter')
   let squareToMoveTo
   let player1Position = 0
   let player1NewPosition
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // .. and then add player1Counter class to square with data-id of 9
         topLadder1 = document.querySelector(`[data-id="${9}"]`)
         newPositionAfterSnakeOrLadder()
-        topLadder1.classList.add('player1Counter')
+        addCounterClassToSquare(topLadder1)
         p.innerHTML = 'Congratulations! You get to climb the ladder!'
       }, 1500)
     } else if (squareToMoveTo.dataset.id === '13') {
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removePlayer1Counter()
         topLadder2 = document.querySelector(`[data-id="${27}"]`)
         newPositionAfterSnakeOrLadder()
-        topLadder2.classList.add('player1Counter')
+        addCounterClassToSquare(topLadder2)
         p.innerHTML = 'Congratulations! You get to climb the ladder!'
       }, 1500)
     } else if (squareToMoveTo.dataset.id === '34') {
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removePlayer1Counter()
         topLadder3 = document.querySelector(`[data-id="${60}"]`)
         newPositionAfterSnakeOrLadder()
-        topLadder3.classList.add('player1Counter')
+        addCounterClassToSquare(topLadder3)
         p.innerHTML = 'Congratulations! You get to climb the ladder!'
       }, 1500)
     }
@@ -80,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removePlayer1Counter()
         bottomSnake1 = document.querySelector(`[data-id="${16}"]`)
         newPositionAfterSnakeOrLadder()
-        bottomSnake1.classList.add('player1Counter')
+        addCounterClassToSquare(bottomSnake1)
         p.innerHTML = 'Bad Luck! Go to the bottom of the snake'
       }, 1500)
     } else if (squareToMoveTo.dataset.id === '56') {
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removePlayer1Counter()
         bottomSnake2 = document.querySelector(`[data-id="${42}"]`)
         newPositionAfterSnakeOrLadder()
-        bottomSnake2.classList.add('player1Counter')
+        addCounterClassToSquare(bottomSnake2)
         p.innerHTML = 'Bad Luck! Go to the bottom of the snake'
       }, 1500)
     } else if (squareToMoveTo.dataset.id === '63') {
@@ -96,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         removePlayer1Counter()
         bottomSnake3 = document.querySelector(`[data-id="${22}"]`)
         newPositionAfterSnakeOrLadder()
-        bottomSnake3.classList.add('player1Counter')
+        addCounterClassToSquare(bottomSnake3)
         p.innerHTML = 'Bad Luck! Go to the bottom of the snake'
       }, 1500)
     }
@@ -105,19 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
   //remove counter from previous turn's square
   function clearPreviousSquare(){
     removePlayer1Counter()
-    if (topLadder1.classList.contains('player1Counter')){
-      topLadder1.classList.remove('player1Counter')
-    } else if (topLadder2.classList.contains('player1Counter')){
-      topLadder2.classList.remove('player1Counter')
-    } else if (topLadder3.classList.contains('player1Counter')){
-      topLadder3.classList.remove('player1Counter')
-    } else if (bottomSnake1.classList.contains('player1Counter')){
-      bottomSnake1.classList.remove('player1Counter')
-    } else if (bottomSnake2.classList.contains('player1Counter')){
-      bottomSnake2.classList.remove('player1Counter')
-    } else if (bottomSnake3.classList.contains('player1Counter')){
-      bottomSnake3.classList.remove('player1Counter')
-    }
+    topLadder1.classList.remove('player1Counter')
+    topLadder2.classList.remove('player1Counter')
+    topLadder3.classList.remove('player1Counter')
+    bottomSnake1.classList.remove('player1Counter')
+    bottomSnake2.classList.remove('player1Counter')
+    bottomSnake3.classList.remove('player1Counter')
   }
 
   function rollDice() {
@@ -126,14 +120,33 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(diceRoll)
     //Add diceRoll number to data-id square that player1 is on
     player1NewPosition = player1Position += diceRoll
+    if(player1Position >= 64){
+      p.innerHTML = 'Player 1 Wins!'
+      console.log('player1wins')
+    } else {
+      p.innerHTML = ''
+    }
     squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
     //add class of player1 to squareToMoveTo
-    squareToMoveTo.classList.add('player1Counter')
+    addCounterClassToSquare(squareToMoveTo)
     // removeSnakeOrLadderClass()
     ladders()
     snakes()
+
     console.log(player1NewPosition)
+
+    // checkForWinner()
   }
+  function addCounterClassToSquare(positionOnBoard){
+    positionOnBoard.classList.add('player1Counter')
+    // squareToMoveTo.classList = counter1
+  }
+
+  // function checkForWinner (){
+  //   if(player1NewPosition >= 64){
+  //     p.innerHTML = 'Player 1 Wins!'
+  //   }
+  // }
 
   dice.addEventListener('mouseup', rollDice)
   dice.addEventListener('mousedown', clearPreviousSquare)
