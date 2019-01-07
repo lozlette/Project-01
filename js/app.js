@@ -14,36 +14,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Change player position to reflect move up ladder or down snake
   function newPositionAfterSnakeOrLadder(){
-    snakesAndLadders.forEach(obj => {
-      if (player1Position === obj.start) {
+    snakesAndLadders.forEach(snklad => {
+      if (player1Position === snklad.start) {
         removePlayer1FromSquare()
+        if (snklad.start === 7 || 13 || 34){
+          ladderAlert()
+        } else if (snklad.start === 18 || 56 || 63){
+          snakeAlert()
+        }
         setTimeout(() => {
-          player1NewPosition = obj.end
+          player1NewPosition = snklad.end
           squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
-          console.log('function working')
+          console.log(squareToMoveTo)
           addPlayer1ToSquare()
+          player1Position = player1NewPosition
         }, 1100)
-      } else if (player2Position === obj.start) {
+      } else if (player2Position === snklad.start) {
         removePlayer2FromSquare()
+        if (snklad.start === 7 || 13 || 34){
+          ladderAlert()
+        } else if (snklad.start === 18 || 56 || 63){
+          snakeAlert()
+        }
         setTimeout(() => {
-          player2NewPosition = obj.end
+          player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
-          console.log('function working')
+          console.log(squareToMoveTo2)
           addPlayer2ToSquare()
+          player1Position = player2NewPosition
         }, 1100)
       }
     })
   }
 
+  function snakeAlert(){
+    h2.innerHTML = 'Bad Luck! Go to the bottom of the snake'
+  }
 
-  // function congratulate(){
-  //   h2.innerHTML = 'Congratulations! You get to climb the ladder!'
-  // }
-  //
-  // function badLuck(){
-  //   h2.innerHTML = 'Bad Luck! Go to the bottom of the snake'
-  // }
-  // //remove counter from previous turn's square
+  function ladderAlert(){
+    h2.innerHTML = 'Congratulations! You get to climb the ladder!'
+  }
+
   function clearPreviousSquare(){
     if(squareToMoveTo) {
       removePlayer1FromSquare()
@@ -54,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function rollDice() {
+    console.log(player1Position)
+    console.log(player2Position)
     //generate a random number between 1 and 6
     const diceRoll = Math.floor(Math.random() * 6) + 1
     const diceRoll2 = Math.floor(Math.random() * 6) + 1
-    console.log(diceRoll)
-    console.log(diceRoll2)
     //Add diceRoll number to data-id square that player is on
     player1NewPosition = player1Position += diceRoll
     player2NewPosition = player2Position += diceRoll2
