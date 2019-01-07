@@ -22,42 +22,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // if square has a class of snake or ladder, replace it with class of player
-  function removeSnakeOrLadderClass(positionOnBoard){
-    if (positionOnBoard.classList.contains('snake')){
-      positionOnBoard.classList.remove('snake')
-    } else if (positionOnBoard.classList.contains('ladder')){
-      positionOnBoard.classList.remove('ladder')
-    }
-  }
+  // function removeSnakeOrLadderClass(positionOnBoard){
+  //   if (positionOnBoard.classList.contains('snake')){
+  //     positionOnBoard.classList.remove('snake')
+  //   } else if (positionOnBoard.classList.contains('ladder')){
+  //     positionOnBoard.classList.remove('ladder')
+  //   }
+  // }
 
   // Change player position to reflect move up ladder or down snake
   function newPositionAfterSnakeOrLadder(){
     snakesAndLadders.forEach(obj => {
       if (player1Position === obj.start) {
+        removePlayer1FromSquare(player1Position)
         player1Position = obj.end
-        console.log('function working')
+        console.log(player1Position)
+        addPlayer1ToSquare(player1Position)
       } else if (player2Position === obj.start) {
+        removePlayer2FromSquare(player2Position)
         player2Position = obj.end
-        console.log('function working')
+        console.log(player2Position)
+        addPlayer2ToSquare(player2Position)
       }
     })
   }
 
 
-    // if (playerSquare.dataset.id === '7'){
-    //   newPosition = 9
-    // } else if (playerSquare.dataset.id === '13'){
-    //   newPosition = 27
-    // } else if (playerSquare.dataset.id === '34'){
-    //   newPosition = 60
-    // } else if (playerSquare.dataset.id === '18'){
-    //   newPosition = 16
-    // } else if (playerSquare.dataset.id === '56'){
-    //   newPosition = 42
-    // } else if (playerSquare.dataset.id === '63'){
-    //   newPosition = 22
-    // }
-    // return newPosition
+  // if (playerSquare.dataset.id === '7'){
+  //   newPosition = 9
+  // } else if (playerSquare.dataset.id === '13'){
+  //   newPosition = 27
+  // } else if (playerSquare.dataset.id === '34'){
+  //   newPosition = 60
+  // } else if (playerSquare.dataset.id === '18'){
+  //   newPosition = 16
+  // } else if (playerSquare.dataset.id === '56'){
+  //   newPosition = 42
+  // } else if (playerSquare.dataset.id === '63'){
+  //   newPosition = 22
+  // }
+  // return newPosition
   // }
 
   //Move players piece to the top of the ladder
@@ -76,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer2FromSquare(squareToMoveTo2)
         topLadder1 = document.querySelector(`[data-id="${9}"]`)
-        player2Position = newPositionAfterSnakeOrLadder(squareToMoveTo2, player2Position)
+        player2Position = newPositionAfterSnakeOrLadder()
         addPlayer2ToSquare(topLadder1)
         congratulate()
       }, 1100)
@@ -84,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer1FromSquare(squareToMoveTo)
         topLadder2 = document.querySelector(`[data-id="${27}"]`)
-        player1Position = newPositionAfterSnakeOrLadder(squareToMoveTo, player1Position)
+        player1Position = newPositionAfterSnakeOrLadder()
         addPlayer1ToSquare(topLadder2)
         congratulate()
       }, 1500)
@@ -92,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer2FromSquare(squareToMoveTo2)
         topLadder2 = document.querySelector(`[data-id="${27}"]`)
-        player1Position = newPositionAfterSnakeOrLadder(squareToMoveTo2, player2Position)
+        player1Position = newPositionAfterSnakeOrLadder()
         addPlayer2ToSquare(topLadder2)
         congratulate()
       }, 1500)
@@ -100,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer1FromSquare(squareToMoveTo)
         topLadder3 = document.querySelector(`[data-id="${60}"]`)
-        player1Position = newPositionAfterSnakeOrLadder(squareToMoveTo, player1Position)
+        player1Position = newPositionAfterSnakeOrLadder()
         addPlayer1ToSquare(topLadder3)
         congratulate()
       }, 1500)
@@ -108,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer2FromSquare(squareToMoveTo2)
         topLadder3 = document.querySelector(`[data-id="${60}"]`)
-        player2Position = newPositionAfterSnakeOrLadder(squareToMoveTo2, player2Position)
+        player2Position = newPositionAfterSnakeOrLadder()
         addPlayer2ToSquare(topLadder3)
         congratulate()
       }, 1500)
@@ -120,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer1FromSquare(squareToMoveTo)
         bottomSnake1 = document.querySelector(`[data-id="${16}"]`)
-        player1Position = newPositionAfterSnakeOrLadder(squareToMoveTo, player1Position)
+        player1Position = newPositionAfterSnakeOrLadder()
         addPlayer1ToSquare(bottomSnake1)
         badLuck()
       }, 1500)
@@ -128,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer2FromSquare(squareToMoveTo2)
         bottomSnake1 = document.querySelector(`[data-id="${16}"]`)
-        player2Position = newPositionAfterSnakeOrLadder(squareToMoveTo2, player2Position)
+        player2Position = newPositionAfterSnakeOrLadder()
         addPlayer2ToSquare(bottomSnake1)
         badLuck()
       }, 1500)
@@ -136,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer1FromSquare(squareToMoveTo)
         bottomSnake2 = document.querySelector(`[data-id="${42}"]`)
-        player1Position = newPositionAfterSnakeOrLadder(squareToMoveTo, player1Position)
+        player1Position = newPositionAfterSnakeOrLadder()
         addPlayer1ToSquare(bottomSnake2)
         badLuck()
       }, 1500)
@@ -144,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer2FromSquare(squareToMoveTo2)
         bottomSnake2 = document.querySelector(`[data-id="${42}"]`)
-        player2Position = newPositionAfterSnakeOrLadder(squareToMoveTo2, player2Position)
+        player2Position = newPositionAfterSnakeOrLadder()
         addPlayer2ToSquare(bottomSnake2)
         badLuck()
       }, 1500)
@@ -152,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer1FromSquare(squareToMoveTo)
         bottomSnake3 = document.querySelector(`[data-id="${22}"]`)
-        player1Position = newPositionAfterSnakeOrLadder(squareToMoveTo, player1Position)
+        player1Position = newPositionAfterSnakeOrLadder()
         addPlayer1ToSquare(bottomSnake3)
         badLuck()
       }, 1500)
@@ -160,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         removePlayer2FromSquare(squareToMoveTo2)
         bottomSnake3 = document.querySelector(`[data-id="${22}"]`)
-        player2Position = newPositionAfterSnakeOrLadder(squareToMoveTo2, player2Position)
+        player2Position = newPositionAfterSnakeOrLadder()
         addPlayer2ToSquare(bottomSnake3)
         badLuck()
       }, 1500)
@@ -217,8 +221,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //add class of player to squareToMoveTo
     addPlayer1ToSquare(squareToMoveTo)
     addPlayer2ToSquare(squareToMoveTo2)
-    removeSnakeOrLadderClass(squareToMoveTo)
-    removeSnakeOrLadderClass(squareToMoveTo2)
+    // removeSnakeOrLadderClass(squareToMoveTo)
+    // removeSnakeOrLadderClass(squareToMoveTo2)
     ladder()
     snake()
     console.log(player1NewPosition)
@@ -250,12 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function removePlayer1FromSquare(positionOnBoard){
-    console.log(positionOnBoard)
     positionOnBoard.classList.remove('player1Counter')
   }
 
   function removePlayer2FromSquare(positionOnBoard){
-    console.log(positionOnBoard)
     positionOnBoard.classList.remove('player2Counter')
   }
 
