@@ -22,7 +22,7 @@ body {
   max-height: 602px;
   max-width: 602px;
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #FFFFFF;
   margin:auto;
   background-image: url(https://cdn.shopify.com/s/files/1/1526/7487/products/snakeskin-onyx_ebf26b56-8557-4ef2-bd06-33dfc7212cf3.jpg?v=1545183267);
   background-repeat: no-repeat;
@@ -36,7 +36,7 @@ body {
 height: 75px;
 width: 75px;
 flex-wrap: wrap;
-border: 1px solid black;
+border: 1px solid #FFFFFF;
 font-weight: bold;
 font-size: 20px;
 }
@@ -45,12 +45,14 @@ font-size: 20px;
   background-image: url(https://www.caseyswood.com/shoppingcart/zen-cart/bmz_cache/b/b6e69556b6d41dfec44a1a4b2434650a.image.220x220.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  border: 1px solid #FFFFFF;
 }
 
 .player2Counter {
   background-image: url(http://cherie-taylor.com/wp-content/gallery/Animation/final_pawn.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
+  border: 1px solid #FFFFFF;
 }
 
 .square.snake {

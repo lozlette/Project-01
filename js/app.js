@@ -95,13 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addPlayer1ToSquare(){
     if (player1Position < 65){
-      squareToMoveTo.classList.add('player1Counter')
+      if (squareToMoveTo.classList.contains('snake')){
+        squareToMoveTo.classList.remove('snake')
+        squareToMoveTo.classList.add('player1Counter')
+      } else if (squareToMoveTo.classList.contains('ladder')){
+        squareToMoveTo.classList.remove('ladder')
+        squareToMoveTo.classList.add('player1Counter')
+      } else {
+        squareToMoveTo.classList.add('player1Counter')
+      }
     }
   }
 
   function addPlayer2ToSquare(){
     if (player2Position < 65){
-      squareToMoveTo2.classList.add('player2Counter')
+      if (squareToMoveTo2.classList.contains('snake')){
+        squareToMoveTo2.classList.remove('snake')
+        squareToMoveTo2.classList.add('player2Counter')
+      } else if (squareToMoveTo2.classList.contains('ladder')){
+        squareToMoveTo2.classList.remove('ladder')
+        squareToMoveTo2.classList.add('player2Counter')
+      } else {
+        squareToMoveTo2.classList.add('player2Counter')
+      }
     }
   }
 
