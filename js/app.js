@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dice = document.querySelector('.dice-button')
   const resetbtn = document.querySelector('.reset-button')
+  const newGamebtn = document.querySelector('.new-game')
   const h2 = document.querySelector('h2')
   const h3 = document.querySelector('h3')
   const width = 8
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const snakes2 = snakesAndLadders[1].slice(3)
   const ladders2 = snakesAndLadders[1].slice(0,3)
 
-console.log(ladders2)
 
   function boardSetup(array1, array2){
     for (let i=width*width; i>0; i--){
@@ -41,14 +41,13 @@ console.log(ladders2)
           }
         })
       })
-
     }
   }
   boardSetup(snakes1, ladders1)
 
   // Change player position to reflect move up ladder or down snake
   function newPositionAfterSnakeOrLadder(){
-    snakesAndLadders.forEach(snklad => {
+    snakesAndLadders[0].forEach(snklad => {
       if (player1Position === snklad.start) {
         removePlayer1FromSquare()
         if (snklad.start === 13 || snklad.start === 30 || snklad.start === 43){
@@ -157,4 +156,5 @@ console.log(ladders2)
   dice.addEventListener('mousedown', clearPreviousSquare)
   dice.addEventListener('mouseup', rollDice)
   resetbtn.addEventListener('click', reloadPage)
+  // newGamebtn.addEventListener('click', chooseBoard)
 })
