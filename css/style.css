@@ -2,7 +2,10 @@
   box-sizing: border-box;
 }
 
-h1{color:#FFFFFF}
+h1 {
+  color:#FFFFFF;
+  font-size: 45px;
+}
 /*# sourceMappingURL=style.css.map */
 
 h2{color:#FFFFFF}
@@ -10,8 +13,8 @@ h2{color:#FFFFFF}
 body {
   text-align: center;
   background-image: url(https://cdn.shopify.com/s/files/1/1201/5382/products/York-Python-Snake-Skin-Animal-Print-Vinyl-Faux-Leather-Home-Decor-Upholstery-Fabric-by-the-Yard-Silver.jpg?v=1504852553);
-  /* background-image: url(https://previews.123rf.com/images/sayanjo65/sayanjo651211/sayanjo65121100086/16455586-snake-skin-pattern-background.jpg); */
   background-repeat: no-repeat;
+  font-family: 'ZCOOL KuaiLe', cursive;
 }
 .grid {
   display: flex;
@@ -23,7 +26,10 @@ body {
   margin:auto;
   background-image: url(https://cdn.shopify.com/s/files/1/1526/7487/products/snakeskin-onyx_ebf26b56-8557-4ef2-bd06-33dfc7212cf3.jpg?v=1545183267);
   background-repeat: no-repeat;
-  /* opacity: 0.5; */
+}
+
+.alerts {
+  height: 50px;
 }
 
 .square {
@@ -31,27 +37,23 @@ height: 75px;
 width: 75px;
 flex-wrap: wrap;
 border: 1px solid black;
+font-weight: bold;
+font-size: 20px;
 }
+
 .player1Counter {
-  background-color: red;
-  height: 60px;
-  width: 60px;
-  border-radius: 50px;
-  margin: auto;
-  opacity: 0.5;
+  background-image: url(https://www.caseyswood.com/shoppingcart/zen-cart/bmz_cache/b/b6e69556b6d41dfec44a1a4b2434650a.image.220x220.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .player2Counter {
-  background-color: blue;
-  height: 60px;
-  width: 60px;
-  border-radius: 50px;
-  margin: auto;
-  opacity: 0.5;
+  background-image: url(http://cherie-taylor.com/wp-content/gallery/Animation/final_pawn.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .square.snake {
-  background-color: green;
   background-image: url(http://www.animatedimages.org/data/media/290/animated-snake-image-0016.gif);
   background-repeat: no-repeat;
   background-size: cover;
@@ -71,8 +73,19 @@ border: 1px solid black;
 .snake2 {
   position: absolute;
 }
+
 .square p {
   color: #006600;
   opacity: 1;
   text-align: center;
+}
+
+button {
+  margin: 40px;
+  background-color: #FFFFFF;
+  height: 40px;
+  width: 100px;
+  border-radius: 80px;
+  font-family: 'ZCOOL KuaiLe', cursive;
+  font-size: 18px;
 }
