@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dice = document.querySelector('.dice-button')
   const h2 = document.querySelector('h2')
-  // const square = document.querySelector('.square')
-  // const counter1 = document.querySelector('player1Counter')
   let squareToMoveTo
   let squareToMoveTo2
   let player1Position = 0
@@ -106,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
       squareToMoveTo2.classList.add('player2Counter')
     }
   }
-
 
   function removePlayer1FromSquare(){
     squareToMoveTo.classList.remove('player1Counter')

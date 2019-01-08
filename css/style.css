@@ -2,33 +2,40 @@
   box-sizing: border-box;
 }
 
-h1{color:green}
+h1{color:#FFFFFF}
 /*# sourceMappingURL=style.css.map */
+
+h2{color:#FFFFFF}
 
 body {
   text-align: center;
+  background-image: url(https://cdn.shopify.com/s/files/1/1201/5382/products/York-Python-Snake-Skin-Animal-Print-Vinyl-Faux-Leather-Home-Decor-Upholstery-Fabric-by-the-Yard-Silver.jpg?v=1504852553);
+  /* background-image: url(https://previews.123rf.com/images/sayanjo65/sayanjo651211/sayanjo65121100086/16455586-snake-skin-pattern-background.jpg); */
+  background-repeat: no-repeat;
 }
 .grid {
   display: flex;
   flex-wrap: wrap;
-  max-height: 802px;
-  max-width: 802px;
+  max-height: 602px;
+  max-width: 602px;
   align-items: center;
   border: 1px solid black;
   margin:auto;
+  background-image: url(https://cdn.shopify.com/s/files/1/1526/7487/products/snakeskin-onyx_ebf26b56-8557-4ef2-bd06-33dfc7212cf3.jpg?v=1545183267);
+  background-repeat: no-repeat;
+  /* opacity: 0.5; */
 }
 
 .square {
-height: 100px;
-width: 100px;
+height: 75px;
+width: 75px;
 flex-wrap: wrap;
 border: 1px solid black;
-z-index: 0;
 }
 .player1Counter {
   background-color: red;
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border-radius: 50px;
   margin: auto;
   opacity: 0.5;
@@ -36,8 +43,8 @@ z-index: 0;
 
 .player2Counter {
   background-color: blue;
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border-radius: 50px;
   margin: auto;
   opacity: 0.5;
@@ -45,18 +52,27 @@ z-index: 0;
 
 .square.snake {
   background-color: green;
+  background-image: url(http://www.animatedimages.org/data/media/290/animated-snake-image-0016.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .square.ladder {
-  background-color: grey;
+  background-image: url(https://cdn.dribbble.com/users/352436/screenshots/4034440/sm_cut_ladder.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .snake1 {
   position: absolute;
-  z-index: 5;
 }
 
 .snake2 {
   position: absolute;
-  z-index: 10;
+}
+.square p {
+  color: #006600;
+  opacity: 1;
+  text-align: center;
 }
