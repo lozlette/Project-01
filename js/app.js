@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1100)
       } else if (player2Position === snklad.start) {
         removePlayer2FromSquare()
-        if (snklad.start === 7 || 13 || 34){
+        if (snklad.start === (7 || 13 || 34)){
           ladderAlert()
-        } else if (snklad.start === 18 || 56 || 63){
+        } else if (snklad.start === (18 || 56 || 63)){
           snakeAlert()
         }
         setTimeout(() => {
