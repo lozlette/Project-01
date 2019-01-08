@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetbtn = document.querySelector('.reset-button')
   const h2 = document.querySelector('h2')
   const h3 = document.querySelector('h3')
+  const width = 8
+  const grid = document.querySelector('.grid')
+  let square
   let squareToMoveTo
   let squareToMoveTo2
   let player1Position = 0
@@ -11,6 +14,47 @@ document.addEventListener('DOMContentLoaded', () => {
   let player1NewPosition
   let player2NewPosition
   const snakesAndLadders = [{start: 7, end: 9}, {start: 13, end: 27}, {start: 34, end: 60},{start: 18, end: 16}, {start: 56, end: 42}, {start: 63, end: 22}]
+  const snakes = snakesAndLadders.slice(3)
+  const ladders = snakesAndLadders.slice(0,3)
+
+  function boardSetup(){
+    for (let i=width*width; i>0; i--){
+      //create div in DOM
+      square = document.createElement('div')
+      //connect square variable with css class
+      square.className = 'square'
+      square.setAttribute('data-id', i)
+      //append the square to the grid
+      grid.appendChild(square)
+      //loop through snakes Ladders arrays to assign snake or ladder class
+      snakes.forEach(snake => {
+      //add class of snake to data id with same number as snake start and end
+        if ( i === snake.start || i === snake.end) {
+          square.classList.add('snake')
+        }
+        ladders.forEach(ladder => {
+          if ( i === ladder.start || i === ladder.end) {
+            square.classList.add('ladder')
+          }
+        })
+      })
+
+      //add class of ladder to start and end of first three array indices and add snake to last three array indices
+
+
+    }
+  }
+  console.log(ladders)
+  boardSetup()
+  //
+  // for (let i > 0; i < 64; i--) {
+  //   //loop round from 64 down to zero, creating data-id attribute for each square
+  //   square = document.createElement('div')
+  //   square.className = 'square'
+  //   grid.appendChild(square)
+  // }
+
+
 
   // Change player position to reflect move up ladder or down snake
   function newPositionAfterSnakeOrLadder(){
