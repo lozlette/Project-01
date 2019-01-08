@@ -3,13 +3,18 @@
 }
 
 h1 {
-  color:#FFFFFF;
+  color: #FFFFFF;
   font-size: 45px;
 }
-/*# sourceMappingURL=style.css.map */
+/* # sourceMappingURL=style.css.map */
 
-h2{color:#FFFFFF}
+h2 {
+  color: #FFFFFF;
+}
 
+h3 {
+  color: #FFFFFF;
+}
 body {
   text-align: center;
   background-image: url(https://cdn.shopify.com/s/files/1/1201/5382/products/York-Python-Snake-Skin-Animal-Print-Vinyl-Faux-Leather-Home-Decor-Upholstery-Fabric-by-the-Yard-Silver.jpg?v=1504852553);
@@ -41,6 +46,24 @@ font-weight: bold;
 font-size: 20px;
 }
 
+.snake {
+  background-image: url(http://www.animatedimages.org/data/media/290/animated-snake-image-0016.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ladder {
+  background-image: url(https://cdn.dribbble.com/users/352436/screenshots/4034440/sm_cut_ladder.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.player1Counter {
+  background-image: url(https://www.caseyswood.com/shoppingcart/zen-cart/bmz_cache/b/b6e69556b6d41dfec44a1a4b2434650a.image.220x220.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #FFFFFF;
+}
 .player1Counter {
   background-image: url(https://www.caseyswood.com/shoppingcart/zen-cart/bmz_cache/b/b6e69556b6d41dfec44a1a4b2434650a.image.220x220.jpg);
   background-repeat: no-repeat;
@@ -53,27 +76,6 @@ font-size: 20px;
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid #FFFFFF;
-}
-
-.square.snake {
-  background-image: url(http://www.animatedimages.org/data/media/290/animated-snake-image-0016.gif);
-  background-repeat: no-repeat;
-  background-size: cover;
-
-}
-
-.square.ladder {
-  background-image: url(https://cdn.dribbble.com/users/352436/screenshots/4034440/sm_cut_ladder.gif);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.snake1 {
-  position: absolute;
-}
-
-.snake2 {
-  position: absolute;
 }
 
 .square p {
@@ -90,4 +92,8 @@ button {
   border-radius: 80px;
   font-family: 'ZCOOL KuaiLe', cursive;
   font-size: 18px;
+}
+
+button:focus {
+  outline:0;
 }

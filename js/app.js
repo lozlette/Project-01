@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const dice = document.querySelector('.dice-button')
+  const resetbtn = document.querySelector('.reset-button')
   const h2 = document.querySelector('h2')
+  const h3 = document.querySelector('h3')
   let squareToMoveTo
   let squareToMoveTo2
   let player1Position = 0
@@ -63,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function rollDice() {
-    console.log(player1Position)
-    console.log(player2Position)
     //generate a random number between 1 and 6
     const diceRoll = Math.floor(Math.random() * 6) + 1
     const diceRoll2 = Math.floor(Math.random() * 6) + 1
+    //update h2 to tell player who rolled what Number
+    h3.innerHTML = `Player 1 rolled ${diceRoll} & Player 2 rolled ${diceRoll2}`
     //Add diceRoll number to data-id square that player is on
     player1NewPosition = player1Position += diceRoll
     player2NewPosition = player2Position += diceRoll2
@@ -95,29 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function addPlayer1ToSquare(){
     if (player1Position < 65){
-      if (squareToMoveTo.classList.contains('snake')){
-        squareToMoveTo.classList.remove('snake')
-        squareToMoveTo.classList.add('player1Counter')
-      } else if (squareToMoveTo.classList.contains('ladder')){
-        squareToMoveTo.classList.remove('ladder')
-        squareToMoveTo.classList.add('player1Counter')
-      } else {
-        squareToMoveTo.classList.add('player1Counter')
-      }
+      squareToMoveTo.classList.add('player1Counter')
     }
   }
 
   function addPlayer2ToSquare(){
     if (player2Position < 65){
-      if (squareToMoveTo2.classList.contains('snake')){
-        squareToMoveTo2.classList.remove('snake')
-        squareToMoveTo2.classList.add('player2Counter')
-      } else if (squareToMoveTo2.classList.contains('ladder')){
-        squareToMoveTo2.classList.remove('ladder')
-        squareToMoveTo2.classList.add('player2Counter')
-      } else {
-        squareToMoveTo2.classList.add('player2Counter')
-      }
+      squareToMoveTo2.classList.add('player2Counter')
     }
   }
 
@@ -125,10 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
     squareToMoveTo.classList.remove('player1Counter')
   }
 
+
   function removePlayer2FromSquare(){
     squareToMoveTo2.classList.remove('player2Counter')
   }
 
+  function reloadPage(){
+    location.reload()
+  }
+
   dice.addEventListener('mousedown', clearPreviousSquare)
   dice.addEventListener('mouseup', rollDice)
+  resetbtn.addEventListener('click', reloadPage)
 })
