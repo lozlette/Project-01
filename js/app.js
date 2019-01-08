@@ -23,12 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
       square = document.createElement('div')
       //connect square variable with css class
       square.className = 'square'
+      square.innerHTML = `<p>${i}</p>`
       square.setAttribute('data-id', i)
-      //append the square to the grid
       grid.appendChild(square)
       //loop through snakes Ladders arrays to assign snake or ladder class
       snakes.forEach(snake => {
-      //add class of snake to data id with same number as snake start and end
         if ( i === snake.start || i === snake.end) {
           square.classList.add('snake')
         }
@@ -39,22 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       })
 
-      //add class of ladder to start and end of first three array indices and add snake to last three array indices
-
-
     }
   }
-  console.log(ladders)
   boardSetup()
-  //
-  // for (let i > 0; i < 64; i--) {
-  //   //loop round from 64 down to zero, creating data-id attribute for each square
-  //   square = document.createElement('div')
-  //   square.className = 'square'
-  //   grid.appendChild(square)
-  // }
-
-
 
   // Change player position to reflect move up ladder or down snake
   function newPositionAfterSnakeOrLadder(){
