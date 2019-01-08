@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let player2Position = 0
   let player1NewPosition
   let player2NewPosition
-  const snakesAndLadders = [{start: 7, end: 9}, {start: 13, end: 27}, {start: 34, end: 60},{start: 18, end: 16}, {start: 56, end: 42}, {start: 63, end: 22}]
+  const snakesAndLadders = [{start: 13, end: 20}, {start: 30, end: 37}, {start: 43, end: 50},{start: 18, end: 9}, {start: 31, end: 22}, {start: 63, end: 54}]
+  const snakesAndLadders2 = [{start: 15, end: 22}, {start: 20, end: 27}, {start: 39, end: 46}, {start: 12, end: 3}, {start: 38, end: 29}, {start: 42, end: 35}]
   const snakes = snakesAndLadders.slice(3)
   const ladders = snakesAndLadders.slice(0,3)
 
@@ -47,9 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
     snakesAndLadders.forEach(snklad => {
       if (player1Position === snklad.start) {
         removePlayer1FromSquare()
-        if (snklad.start === 7 || 13 || 34){
+        if (snklad.start === 13 || snklad.start === 30 || snklad.start === 43){
           ladderAlert()
-        } else if (snklad.start === 18 || 56 || 63){
+        } else if (snklad.start === 18 || snklad.start === 31 || snklad.start === 63){
           snakeAlert()
         }
         setTimeout(() => {
@@ -61,9 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1100)
       } else if (player2Position === snklad.start) {
         removePlayer2FromSquare()
-        if (snklad.start === (7 || 13 || 34)){
+        if (snklad.start === 13 || snklad.start === 30 || snklad.start === 43){
           ladderAlert()
-        } else if (snklad.start === (18 || 56 || 63)){
+        } else if (snklad.start === 18 || snklad.start === 31 || snklad.start === 63){
           snakeAlert()
         }
         setTimeout(() => {
