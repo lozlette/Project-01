@@ -6,8 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const h3 = document.querySelector('h3')
   const width = 8
   const grid = document.querySelector('.grid')
-  let start = document.querySelector('.start-screen')
-  let game = document.querySelector('.game')
   let square
   let squareToMoveTo
   let squareToMoveTo2
@@ -17,21 +15,20 @@ document.addEventListener('DOMContentLoaded', () => {
   let player2NewPosition
   let newBoard
   const snakesAndLadders =
-    [
-      [{start: 13, end: 20}, {start: 30, end: 37}, {start: 43, end: 50},{start: 18, end: 9}, {start: 31, end: 22}, {start: 63, end: 54}],
+  [
+    [{start: 13, end: 20}, {start: 30, end: 37}, {start: 43, end: 50},{start: 18, end: 9}, {start: 31, end: 22}, {start: 63, end: 54}],
 
-      [{start: 15, end: 22}, {start: 20, end: 27}, {start: 39, end: 46}, {start: 12, end: 3}, {start: 38, end: 29}, {start: 42, end: 35}],
+    [{start: 15, end: 22}, {start: 20, end: 27}, {start: 39, end: 46}, {start: 12, end: 3}, {start: 38, end: 29}, {start: 42, end: 35}],
 
-      [{start: 10, end: 17}, {start: 12, end: 21}, {start: 53, end: 62}, {start: 23, end: 16}, {start: 34, end: 25}, {start: 60, end: 53}],
+    [{start: 10, end: 17}, {start: 12, end: 21}, {start: 53, end: 62}, {start: 23, end: 16}, {start: 34, end: 25}, {start: 60, end: 52}],
 
-      [{start: 4, end: 12}, {start: 34, end: 42}, {start: 55, end: 64}, {start: 41, end: 33}, {start: 10, end: 3}, {start: 40, end: 32}],
+    [{start: 4, end: 12}, {start: 34, end: 42}, {start: 55, end: 64}, {start: 41, end: 33}, {start: 10, end: 3}, {start: 40, end: 32}],
 
-      [{start: 5, end: 13}, {start: 23, end: 30}, {start: 43, end: 52}, {start: 17, end: 10}, {start: 31, end: 22}, {start: 53, end: 45}],
+    [{start: 5, end: 13}, {start: 23, end: 30}, {start: 43, end: 52}, {start: 17, end: 10}, {start: 31, end: 22}, {start: 53, end: 45}],
 
-      [{start: 9, end: 1}, {start: 23, end: 14}, {start: 35, end: 44},
-        {start: 17, end: 11}, {start: 31, end: 24}, {start: 58, end: 50}]
-    ]
-
+    [{start: 9, end: 1}, {start: 14, end: 23}, {start: 35, end: 44},
+      {start: 18, end: 11}, {start: 31, end: 24}, {start: 58, end: 50}]
+  ]
 
   function boardSetup(array1, array2){
     grid.innerHTML = ''
@@ -59,17 +56,29 @@ document.addEventListener('DOMContentLoaded', () => {
     player2Position = 0
   }
 
-
+  //function randomly chooses a game board from 8 arrays
   function chooseBoard(){
     newBoard = snakesAndLadders[Math.floor(Math.random()*snakesAndLadders.length)]
-    console.log(newBoard)
-    // console.log(Math.floor(Math.random()*snakesAndLadders.length))
     boardSetup(newBoard.slice(3), newBoard.slice(0,3))
   }
 
+  // -----------------------
+  const hideButton = document.querySelector('button')
+  const startScreen = document.querySelector('.startScreen')
+  console.log(hideButton)
+
+  hideButton.addEventListener('click', hideScreen)
+
+  function hideScreen(){
+    startScreen.classList.add('hide')
+
+  }
+  // -----------------------
+
+
   chooseBoard()
 
-  // Change player position to reflect move up ladder or down snake
+  // Move player piece to top of ladder or bottom of snake
   function newPositionAfterSnakeOrLadder(array, alert){
     array.forEach(snklad => {
       if (player1Position === snklad.start) {
@@ -105,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     h2.innerHTML = 'Congratulations! You get to climb the ladder!'
   }
 
+  // remove player pieces from board ready for next roll of the dice
   function clearPreviousSquare(){
     if(squareToMoveTo) {
       removePlayer1FromSquare()
@@ -117,10 +127,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function rollDice() {
     if (player1Position >= 64 || player2Position >= 64)
       return
-    //generate a random number between 1 and 6
+      //generate a random number between 1 and 6
     const diceRoll = Math.floor(Math.random() * 6) + 1
     const diceRoll2 = Math.floor(Math.random() * 6) + 1
-    //update h2 to tell player who rolled what Number
+    //update h2 to tell player who rolled what number
     h3.innerHTML = `Player 1 rolled ${diceRoll} & Player 2 rolled ${diceRoll2}`
     //Add diceRoll number to data-id square that player is on
     player1NewPosition = player1Position += diceRoll
@@ -169,8 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function removePlayer2FromSquare(){
     squareToMoveTo2.classList.remove('player2Counter')
   }
-
   dice.addEventListener('mousedown', clearPreviousSquare)
   dice.addEventListener('mouseup', rollDice)
   newGamebtn.addEventListener('click', chooseBoard)
+
+
 })
