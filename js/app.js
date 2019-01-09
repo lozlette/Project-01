@@ -44,6 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       })
     }
+    player1Position = 0
+    player2Position = 0
   }
 
 
@@ -102,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function rollDice() {
+    if (player1Position >= 64 || player2Position >= 64)
+      return
     //generate a random number between 1 and 6
     const diceRoll = Math.floor(Math.random() * 6) + 1
     const diceRoll2 = Math.floor(Math.random() * 6) + 1
@@ -110,28 +114,29 @@ document.addEventListener('DOMContentLoaded', () => {
     //Add diceRoll number to data-id square that player is on
     player1NewPosition = player1Position += diceRoll
     player2NewPosition = player2Position += diceRoll2
-    checkForWinner()
+    displayWinner()
     squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
     squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
     //add class of player to squareToMoveTo
     addPlayer1ToSquare()
     addPlayer2ToSquare()
-    newPositionAfterSnakeOrLadder(snakesAndLadders[0].slice(0,3), ladderAlert)
-    newPositionAfterSnakeOrLadder(snakesAndLadders[0].slice(3), snakeAlert)
+    newPositionAfterSnakeOrLadder(newBoard.slice(0,3), ladderAlert)
+    newPositionAfterSnakeOrLadder(newBoard.slice(3), snakeAlert)
     console.log(player1NewPosition)
     console.log(player2NewPosition)
+
   }
 
-  function checkForWinner() {
+  function displayWinner() {
     if (player1Position >= 64){
       h2.innerHTML = 'Player 1 Wins!'
-      console.log('player1wins')
     } else if(player2Position >= 64){
       h2.innerHTML = 'Player 2 Wins!'
     } else {
       h2.innerHTML = ''
     }
   }
+
 
   function addPlayer1ToSquare(){
     if (player1Position < 65){
