@@ -99,7 +99,7 @@ button:focus {
   display: none;
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
 
   .grid {
     max-height: 802px;
@@ -122,7 +122,7 @@ button:focus {
   h1 {
     60px;
   }
-}
+} */
   @media screen and (max-width: 300px) {
 
     .grid {

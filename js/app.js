@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const h3 = document.querySelector('h3')
   const width = 8
   const grid = document.querySelector('.grid')
+  let start = document.querySelector('.start-screen')
+  let game = document.querySelector('.game')
   let square
   let squareToMoveTo
   let squareToMoveTo2
