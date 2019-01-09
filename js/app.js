@@ -18,7 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const snakesAndLadders =
     [
       [{start: 13, end: 20}, {start: 30, end: 37}, {start: 43, end: 50},{start: 18, end: 9}, {start: 31, end: 22}, {start: 63, end: 54}],
-      [{start: 15, end: 22}, {start: 20, end: 27}, {start: 39, end: 46}, {start: 12, end: 3}, {start: 38, end: 29}, {start: 42, end: 35}]
+
+      [{start: 15, end: 22}, {start: 20, end: 27}, {start: 39, end: 46}, {start: 12, end: 3}, {start: 38, end: 29}, {start: 42, end: 35}],
+
+      [{start: 10, end: 17}, {start: 12, end: 21}, {start: 53, end: 62}, {start: 23, end: 16}, {start: 34, end: 25}, {start: 60, end: 53}],
+
+      [{start: 4, end: 12}, {start: 34, end: 42}, {start: 55, end: 64}, {start: 41, end: 33}, {start: 10, end: 3}, {start: 40, end: 32}],
+
+      [{start: 5, end: 13}, {start: 23, end: 30}, {start: 43, end: 52}, {start: 17, end: 10}, {start: 31, end: 22}, {start: 53, end: 45}],
+
+      [{start: 9, end: 1}, {start: 23, end: 14}, {start: 35, end: 44},
+        {start: 17, end: 11}, {start: 31, end: 24}, {start: 58, end: 50}]
     ]
 
 
