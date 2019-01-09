@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let player2Position = 0
   let player1NewPosition
   let player2NewPosition
+  let newBoard
   const snakesAndLadders = [[{start: 13, end: 20}, {start: 30, end: 37}, {start: 43, end: 50},{start: 18, end: 9}, {start: 31, end: 22}, {start: 63, end: 54}],[{start: 15, end: 22}, {start: 20, end: 27}, {start: 39, end: 46}, {start: 12, end: 3}, {start: 38, end: 29}, {start: 42, end: 35}]]
   const snakes1 = snakesAndLadders[0].slice(3)
   const ladders1 = snakesAndLadders[0].slice(0,3)
@@ -43,15 +44,24 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     }
   }
+
+  function chooseBoard(){
+    //choose between snakesAndLadders array indexes
+    for (let i=0; i < snakesAndLadders.length; i++)
+    //randomly select an array index
+      console.log('function working')
+    newBoard = snakesAndLadders[Math.floor(Math.random()*snakesAndLadders.length)]
+    console.log(newBoard)
+  }
   boardSetup(snakes1, ladders1)
 
   // Change player position to reflect move up ladder or down snake
-  function newPositionAfterSnakeOrLadder(array){
+  function newPositionAfterSnakeOrLadder(array, alert){
     array.forEach(snklad => {
       if (player1Position === snklad.start) {
         console.log(snklad)
         removePlayer1FromSquare()
-        ladderAlert()
+        alert()
         setTimeout(() => {
           player1NewPosition = snklad.end
           squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
@@ -61,11 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1100)
       } else if (player2Position === snklad.start) {
         removePlayer2FromSquare()
-        // if (snklad.start === 13 || snklad.start === 30 || snklad.start === 43){
-        //   ladderAlert()
-        // } else if (snklad.start === 18 || snklad.start === 31 || snklad.start === 63){
-        //   snakeAlert()
-        // }
+        alert()
         setTimeout(() => {
           player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
@@ -109,7 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //add class of player to squareToMoveTo
     addPlayer1ToSquare()
     addPlayer2ToSquare()
-    newPositionAfterSnakeOrLadder(snakesAndLadders[0].slice(0,3))
+    newPositionAfterSnakeOrLadder(snakesAndLadders[0].slice(0,3), ladderAlert)
+    newPositionAfterSnakeOrLadder(snakesAndLadders[0].slice(3), snakeAlert)
     console.log(player1NewPosition)
     console.log(player2NewPosition)
   }
@@ -153,5 +160,5 @@ document.addEventListener('DOMContentLoaded', () => {
   dice.addEventListener('mousedown', clearPreviousSquare)
   dice.addEventListener('mouseup', rollDice)
   resetbtn.addEventListener('click', reloadPage)
-  // newGamebtn.addEventListener('click', chooseBoard)
+  newGamebtn.addEventListener('click', chooseBoard)
 })
