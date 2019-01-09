@@ -46,15 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
   boardSetup(snakes1, ladders1)
 
   // Change player position to reflect move up ladder or down snake
-  function newPositionAfterSnakeOrLadder(){
-    snakesAndLadders[0].forEach(snklad => {
+  function newPositionAfterSnakeOrLadder(array){
+    array.forEach(snklad => {
       if (player1Position === snklad.start) {
+        console.log(snklad)
         removePlayer1FromSquare()
-        if (snklad.start === 13 || snklad.start === 30 || snklad.start === 43){
-          ladderAlert()
-        } else if (snklad.start === 18 || snklad.start === 31 || snklad.start === 63){
-          snakeAlert()
-        }
+        // if (snklad.start === 13 || snklad.start === 30 || snklad.start === 43){
+        //   ladderAlert()
+        // } else if (snklad.start === 18 || snklad.start === 31 || snklad.start === 63){
+        //   snakeAlert()
+        // }
         setTimeout(() => {
           player1NewPosition = snklad.end
           squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
@@ -64,11 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1100)
       } else if (player2Position === snklad.start) {
         removePlayer2FromSquare()
-        if (snklad.start === 13 || snklad.start === 30 || snklad.start === 43){
-          ladderAlert()
-        } else if (snklad.start === 18 || snklad.start === 31 || snklad.start === 63){
-          snakeAlert()
-        }
+        // if (snklad.start === 13 || snklad.start === 30 || snklad.start === 43){
+        //   ladderAlert()
+        // } else if (snklad.start === 18 || snklad.start === 31 || snklad.start === 63){
+        //   snakeAlert()
+        // }
         setTimeout(() => {
           player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
@@ -112,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //add class of player to squareToMoveTo
     addPlayer1ToSquare()
     addPlayer2ToSquare()
-    newPositionAfterSnakeOrLadder()
+    newPositionAfterSnakeOrLadder(snakesAndLadders[0])
     console.log(player1NewPosition)
     console.log(player2NewPosition)
   }
