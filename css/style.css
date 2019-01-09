@@ -18,6 +18,7 @@ h2 {
 h3 {
   color: #FFFFFF;
 }
+
 body {
   text-align: center;
   background-image: url(https://cdn.shopify.com/s/files/1/1201/5382/products/York-Python-Snake-Skin-Animal-Print-Vinyl-Faux-Leather-Home-Decor-Upholstery-Fabric-by-the-Yard-Silver.jpg?v=1504852553);
@@ -32,13 +33,13 @@ body {
   max-width: 602px;
   align-items: center;
   border: 1px solid #FFFFFF;
-  margin:auto;
+  margin: auto;
   background-image: url(https://cdn.shopify.com/s/files/1/1526/7487/products/snakeskin-onyx_ebf26b56-8557-4ef2-bd06-33dfc7212cf3.jpg?v=1545183267);
   background-repeat: no-repeat;
 }
 
-.alerts {
-  height: 80px;
+.alert1, .alert2 {
+  height: 40px;
 }
 
 .square {

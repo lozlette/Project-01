@@ -63,11 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -----------------------
-  const hideButton = document.querySelector('button')
+  const startButton = document.querySelector('button')
   const startScreen = document.querySelector('.startScreen')
-  console.log(hideButton)
 
-  hideButton.addEventListener('click', hideScreen)
+  startButton.addEventListener('click', hideScreen)
 
   function hideScreen(){
     startScreen.classList.add('hide')
@@ -77,6 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   chooseBoard()
+
+  function snakeAlert(){
+    h2.innerHTML = 'Bad Luck! Go to the bottom of the snake'
+    console.log('alert working')
+  }
+
+  function ladderAlert(){
+    h2.innerHTML = 'Congratulations! You get to climb the ladder!'
+    console.log('alert working')
+  }
 
   // Move player piece to top of ladder or bottom of snake
   function newPositionAfterSnakeOrLadder(array, alert){
@@ -95,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (player2Position === snklad.start) {
         removePlayer2FromSquare()
         alert()
+
         setTimeout(() => {
           player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
@@ -104,14 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1100)
       }
     })
-  }
-
-  function snakeAlert(){
-    h2.innerHTML = 'Bad Luck! Go to the bottom of the snake'
-  }
-
-  function ladderAlert(){
-    h2.innerHTML = 'Congratulations! You get to climb the ladder!'
   }
 
   // remove player pieces from board ready for next roll of the dice
