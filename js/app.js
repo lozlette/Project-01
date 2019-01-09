@@ -51,11 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (player1Position === snklad.start) {
         console.log(snklad)
         removePlayer1FromSquare()
-        // if (snklad.start === 13 || snklad.start === 30 || snklad.start === 43){
-        //   ladderAlert()
-        // } else if (snklad.start === 18 || snklad.start === 31 || snklad.start === 63){
-        //   snakeAlert()
-        // }
+        ladderAlert()
         setTimeout(() => {
           player1NewPosition = snklad.end
           squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
@@ -113,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //add class of player to squareToMoveTo
     addPlayer1ToSquare()
     addPlayer2ToSquare()
-    newPositionAfterSnakeOrLadder(snakesAndLadders[0])
+    newPositionAfterSnakeOrLadder(snakesAndLadders[0].slice(0,3))
     console.log(player1NewPosition)
     console.log(player2NewPosition)
   }
