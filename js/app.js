@@ -15,14 +15,15 @@ document.addEventListener('DOMContentLoaded', () => {
   let player1NewPosition
   let player2NewPosition
   let newBoard
-  const snakesAndLadders = [[{start: 13, end: 20}, {start: 30, end: 37}, {start: 43, end: 50},{start: 18, end: 9}, {start: 31, end: 22}, {start: 63, end: 54}],[{start: 15, end: 22}, {start: 20, end: 27}, {start: 39, end: 46}, {start: 12, end: 3}, {start: 38, end: 29}, {start: 42, end: 35}]]
-  const snakes1 = snakesAndLadders[0].slice(3)
-  const ladders1 = snakesAndLadders[0].slice(0,3)
-  const snakes2 = snakesAndLadders[1].slice(3)
-  const ladders2 = snakesAndLadders[1].slice(0,3)
+  const snakesAndLadders =
+    [
+      [{start: 13, end: 20}, {start: 30, end: 37}, {start: 43, end: 50},{start: 18, end: 9}, {start: 31, end: 22}, {start: 63, end: 54}],
+      [{start: 15, end: 22}, {start: 20, end: 27}, {start: 39, end: 46}, {start: 12, end: 3}, {start: 38, end: 29}, {start: 42, end: 35}]
+    ]
 
 
   function boardSetup(array1, array2){
+    grid.innerHTML = ''
     for (let i=width*width; i>0; i--){
       //create div in DOM
       square = document.createElement('div')
@@ -45,15 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+
   function chooseBoard(){
-    //choose between snakesAndLadders array indexes
-    for (let i=0; i < snakesAndLadders.length; i++)
-    //randomly select an array index
-      console.log('function working')
     newBoard = snakesAndLadders[Math.floor(Math.random()*snakesAndLadders.length)]
     console.log(newBoard)
+    // console.log(Math.floor(Math.random()*snakesAndLadders.length))
+    boardSetup(newBoard.slice(3), newBoard.slice(0,3))
   }
-  boardSetup(snakes1, ladders1)
+
+  chooseBoard()
 
   // Change player position to reflect move up ladder or down snake
   function newPositionAfterSnakeOrLadder(array, alert){
