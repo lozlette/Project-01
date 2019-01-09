@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const dice = document.querySelector('.dice-button')
-  const resetbtn = document.querySelector('.reset-button')
   const newGamebtn = document.querySelector('.new-game')
   const h2 = document.querySelector('h2')
   const h3 = document.querySelector('h3')
@@ -169,12 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     squareToMoveTo2.classList.remove('player2Counter')
   }
 
-  function reloadPage(){
-    location.reload()
-  }
-
   dice.addEventListener('mousedown', clearPreviousSquare)
   dice.addEventListener('mouseup', rollDice)
-  resetbtn.addEventListener('click', reloadPage)
   newGamebtn.addEventListener('click', chooseBoard)
 })
