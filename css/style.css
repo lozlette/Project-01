@@ -17,7 +17,7 @@ h3 {
 
 body {
   text-align: center;
-  background-image: url(https://cdn.shopify.com/s/files/1/1201/5382/products/York-Python-Snake-Skin-Animal-Print-Vinyl-Faux-Leather-Home-Decor-Upholstery-Fabric-by-the-Yard-Silver.jpg?v=1504852553);
+  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/He5nLUEg-j2n3bghg/videoblocks-black-snake-skin-background-close-up-4k-high-quality-footage_r1bdafuiz_thumbnail-full01.png);
   background-repeat: no-repeat;
   font-family: 'ZCOOL KuaiLe', cursive;
   max-width: 100%;
@@ -30,8 +30,7 @@ body {
   align-items: center;
   border: 1px solid #FFFFFF;
   margin: auto;
-  background-image: url(https://cdn.shopify.com/s/files/1/1526/7487/products/snakeskin-onyx_ebf26b56-8557-4ef2-bd06-33dfc7212cf3.jpg?v=1545183267);
-  background-repeat: no-repeat;
+  background-image: url(https://www.rvinyl.com/Shared/Images/Product/Rwraps-reg-Snake-Skin-Vinyl-Film-Wrap-Black/Black-Snake-Skin-Vinyl-Wraps.jpg);
 }
 
 .alerts {
@@ -100,10 +99,11 @@ button:focus {
 }
 
 .startScreen {
-  height: 150vh;
+  height: 130vh;
   width: 100vw;
-  background-image: url(https://cdn.shopify.com/s/files/1/1201/5382/products/York-Python-Snake-Skin-Animal-Print-Vinyl-Faux-Leather-Home-Decor-Upholstery-Fabric-by-the-Yard-Grass.jpg?v=1504852553);
+  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/He5nLUEg-j2n3bghg/videoblocks-black-snake-skin-background-close-up-4k-high-quality-footage_r1bdafuiz_thumbnail-full01.png);
   position: absolute;
+  background-repeat:no-repeat;
   top: 0;
 }
 
@@ -117,9 +117,29 @@ button:focus {
   margin-top: 150px;
   font-size: 60px;
   color: #FFFFFF;
+  animation-name: shake;
+  animation-duration: 1s;
 }
 .startScreen h2 {
   font-size: 40px;
+}
+
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
   @media screen and (max-width: 400px) {

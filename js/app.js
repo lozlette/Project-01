@@ -97,14 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           player1NewPosition = snklad.end
           squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
-          console.log(squareToMoveTo)
           addPlayer1ToSquare()
           player1Position = player1NewPosition
         }, 1300)
         setTimeout(() => {
           player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
-          console.log(squareToMoveTo2)
           addPlayer2ToSquare()
           player1Position = player2NewPosition
         }, 1300)
@@ -114,7 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           player1NewPosition = snklad.end
           squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
-          console.log(squareToMoveTo)
           addPlayer1ToSquare()
           player1Position = player1NewPosition
         }, 1300)
@@ -124,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
-          console.log(squareToMoveTo2)
           addPlayer2ToSquare()
           player1Position = player2NewPosition
         }, 1300)
