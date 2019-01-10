@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     [{start: 10, end: 17}, {start: 12, end: 21}, {start: 53, end: 62}, {start: 23, end: 16}, {start: 34, end: 25}, {start: 60, end: 52}],
 
-    [{start: 4, end: 12}, {start: 34, end: 42}, {start: 55, end: 64}, {start: 41, end: 33}, {start: 10, end: 3}, {start: 40, end: 32}],
+    [{start: 4, end: 12}, {start: 34, end: 42}, {start: 55, end: 62}, {start: 41, end: 33}, {start: 10, end: 3}, {start: 40, end: 32}],
 
     [{start: 5, end: 13}, {start: 23, end: 30}, {start: 43, end: 52}, {start: 17, end: 10}, {start: 31, end: 22}, {start: 53, end: 45}],
 
-    [{start: 9, end: 1}, {start: 14, end: 23}, {start: 35, end: 44},
+    [{start: 1, end: 9}, {start: 14, end: 23}, {start: 35, end: 44},
       {start: 18, end: 11}, {start: 31, end: 24}, {start: 58, end: 50}]
   ]
 
@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     player1Position = 0
     player2Position = 0
+    h2.innerHTML = ''
   }
 
   //function randomly chooses a game board from 8 arrays
@@ -90,7 +91,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Move player piece to top of ladder or bottom of snake
   function newPositionAfterSnakeOrLadder(array, alert){
     array.forEach(snklad => {
-      if (player1Position === snklad.start) {
+      if (player1Position === snklad.start &&
+        player2Position === snklad.start){
+        removePlayer1FromSquare()
+        removePlayer2FromSquare()
+        alert()
+        setTimeout(() => {
+          player1NewPosition = snklad.end
+          squareToMoveTo = document.querySelector(`[data-id="${player1NewPosition}"]`)
+          console.log(squareToMoveTo)
+          addPlayer1ToSquare()
+          player1Position = player1NewPosition
+        }, 1100)
+        setTimeout(() => {
+          player2NewPosition = snklad.end
+          squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
+          console.log(squareToMoveTo2)
+          addPlayer2ToSquare()
+          player1Position = player2NewPosition
+        }, 1100)
+      } else if (player1Position === snklad.start) {
         console.log(snklad)
         removePlayer1FromSquare()
         alert()
@@ -114,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
+
 
   // remove player pieces from board ready for next roll of the dice
   function clearPreviousSquare(){
