@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const grid = document.querySelector('.grid')
   const snakeAudio = document.querySelector('.rattle')
   const snake2Audio = document.querySelector('.rattle2')
-  const ladderAudio = document.querySelector('.steps')
+  const ladderAudio = document.querySelector('.ding')
   let square
   let squareToMoveTo
   let squareToMoveTo2
