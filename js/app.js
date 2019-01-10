@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dice = document.querySelector('.dice-button')
   const newGamebtn = document.querySelector('.new-game')
-  const h2 = document.querySelector('h2')
+  const h2 = document.querySelector('.snakeLadderAlert')
   const h3 = document.querySelector('h3')
   const width = 8
   const grid = document.querySelector('.grid')
@@ -104,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (player2Position === snklad.start) {
         removePlayer2FromSquare()
         alert()
-
         setTimeout(() => {
           player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
