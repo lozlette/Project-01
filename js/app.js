@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const h3 = document.querySelector('h3')
   const width = 8
   const grid = document.querySelector('.grid')
+  const snakeAudio = document.querySelector('.rattle')
+  const snake2Audio = document.querySelector('.rattle2')
+  const ladderAudio = document.querySelector('.steps')
   let square
   let squareToMoveTo
   let squareToMoveTo2
@@ -61,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function chooseBoard(){
     newBoard = snakesAndLadders[Math.floor(Math.random()*snakesAndLadders.length)]
     boardSetup(newBoard.slice(3), newBoard.slice(0,3))
+    playSnake2Audio()
   }
 
   // -----------------------
@@ -71,19 +75,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function hideScreen(){
     startScreen.classList.add('hide')
-
+    snake2Audio.play()
   }
   // -----------------------
 
 
   chooseBoard()
 
+  function playLadderAudio(){
+    ladderAudio.play()
+    console.log('function working')
+  }
+
+  function playSnakeAudio(){
+    snakeAudio.play()
+  }
+
+  function playSnake2Audio(){
+    snake2Audio.play()
+  }
+
   function snakeAlert(){
     h2.innerHTML = 'Bad Luck! Go to the bottom of the snake'
+    playSnakeAudio()
   }
 
   function ladderAlert(){
     h2.innerHTML = 'Congratulations! You get to climb the ladder!'
+    playLadderAudio()
   }
 
   // Move player piece to top of ladder or bottom of snake
