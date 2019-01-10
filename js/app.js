@@ -80,12 +80,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function snakeAlert(){
     h2.innerHTML = 'Bad Luck! Go to the bottom of the snake'
-    console.log('alert working')
   }
 
   function ladderAlert(){
     h2.innerHTML = 'Congratulations! You get to climb the ladder!'
-    console.log('alert working')
   }
 
   // Move player piece to top of ladder or bottom of snake
@@ -102,16 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log(squareToMoveTo)
           addPlayer1ToSquare()
           player1Position = player1NewPosition
-        }, 1100)
+        }, 1300)
         setTimeout(() => {
           player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
           console.log(squareToMoveTo2)
           addPlayer2ToSquare()
           player1Position = player2NewPosition
-        }, 1100)
+        }, 1300)
       } else if (player1Position === snklad.start) {
-        console.log(snklad)
         removePlayer1FromSquare()
         alert()
         setTimeout(() => {
@@ -120,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log(squareToMoveTo)
           addPlayer1ToSquare()
           player1Position = player1NewPosition
-        }, 1100)
+        }, 1300)
       } else if (player2Position === snklad.start) {
         removePlayer2FromSquare()
         alert()
@@ -130,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
           console.log(squareToMoveTo2)
           addPlayer2ToSquare()
           player1Position = player2NewPosition
-        }, 1100)
+        }, 1300)
       }
     })
   }
@@ -201,6 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function removePlayer2FromSquare(){
     squareToMoveTo2.classList.remove('player2Counter')
   }
+
   dice.addEventListener('mousedown', clearPreviousSquare)
   dice.addEventListener('mouseup', rollDice)
   newGamebtn.addEventListener('click', chooseBoard)
