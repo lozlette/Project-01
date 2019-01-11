@@ -68,7 +68,7 @@ I started by creating the grid in JS, but then changed this to an HTML grid usin
 
 I then made a function to roll the dice, which randomly chooses a number between 1 and 6, and updated the player's position by adding on the dice roll. The players pieces were moved to the relevant new square by adding the classes of the players pieces to the squares with the relevant data-id.
 
-Next I made the snake or ladder function to move the players piece to the top of a ladder or bottom of a snake. This function checked if the data-id matched the data-id of the top of the snake or bottom of a ladder. Once it found a match it would update the player position, and add this square number on to the next dice roll.
+Next I made the snake or ladder function to move the players piece to the top of a ladder or bottom of a snake. This function checked if the data-id matched the data-id of the top of the snake or bottom of a ladder. Once it found a match it would update the player position, and add this square's data-id number on to the next dice roll.
 
 I then decided to wrap the snake or ladder function in a set timer, so that there would be a short delay before the player's piece moves from the top to the bottom of a snake, and the bottom to top of a ladder.
 
@@ -79,8 +79,6 @@ I refactored my game at this point and created an array of objects to contain th
 As the game continued to develop I decided to add an extra feature of an option to choose a new game, with a new game board, with different layout of snakes and ladders. In order to do this I changed my grid setup back to JS. I added the data-id's to each square with a for loop, and then looped through each array of snakes and ladders to add the classes of snake or ladder to the grid squares.
 
 I then created a function to create the new game boards by randomly choosing one of 6 layouts (arrays) in the snake and ladder array of arrays. I refactored my functions to allow for the new game board layouts.
-
-I added the logic to stop the game when the player position reaches 64.
 
 Lastly I made the game mobile responsive, and added styling and HTML5 Audio.
 

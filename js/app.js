@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
           player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
           addPlayer2ToSquare()
-          player1Position = player2NewPosition
+          player2Position = player2NewPosition
         }, 1300)
       } else if (player1Position === snklad.start) {
         removePlayer1FromSquare()
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
           player2NewPosition = snklad.end
           squareToMoveTo2 = document.querySelector(`[data-id="${player2NewPosition}"]`)
           addPlayer2ToSquare()
-          player1Position = player2NewPosition
+          player2Position = player2NewPosition
         }, 1300)
       }
     })
