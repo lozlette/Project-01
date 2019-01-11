@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const snakeAudio = document.querySelector('.rattle')
   const snake2Audio = document.querySelector('.rattle2')
   const ladderAudio = document.querySelector('.ding')
+  const startButton = document.querySelector('button')
+  const startScreen = document.querySelector('.startScreen')
   let square
   let squareToMoveTo
   let squareToMoveTo2
@@ -32,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     [{start: 1, end: 9}, {start: 14, end: 23}, {start: 35, end: 44},
       {start: 18, end: 11}, {start: 31, end: 24}, {start: 58, end: 50}]
   ]
+
+
+
+  //-------------------------------------------------
+  //Function to set up the game board
+
 
   function boardSetup(array1, array2){
     grid.innerHTML = ''
@@ -61,27 +69,36 @@ document.addEventListener('DOMContentLoaded', () => {
     h3.innerHTML = ''
   }
 
-  //function randomly chooses a game board from 8 arrays
+
+
+  //-------------------------------------------------------------
+  // Function to randomly choose a game board from 6 arrays
+
+
   function chooseBoard(){
     newBoard = snakesAndLadders[Math.floor(Math.random()*snakesAndLadders.length)]
     boardSetup(newBoard.slice(3), newBoard.slice(0,3))
     playSnake2Audio()
   }
 
-  // -----------------------
-  const startButton = document.querySelector('button')
-  const startScreen = document.querySelector('.startScreen')
+  chooseBoard()
 
-  startButton.addEventListener('click', hideScreen)
+
+
+  // -------------------------------------------------------------
+  //function and event listener to hide start screen when player clicks 'Play' button
+
 
   function hideScreen(){
     startScreen.classList.add('hide')
     snake2Audio.play()
   }
-  // -----------------------
 
 
-  chooseBoard()
+
+  // --------------------------------------------------------------
+  // Audio functions
+
 
   function playLadderAudio(){
     ladderAudio.play()
@@ -96,6 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
     snake2Audio.play()
   }
 
+
+
+  //-----------------------------------------------------------------
+  // Alert functions
+
+
   function snakeAlert(){
     h2.innerHTML = 'Bad Luck! Go to the bottom of the snake'
     playSnakeAudio()
@@ -106,7 +129,12 @@ document.addEventListener('DOMContentLoaded', () => {
     playLadderAudio()
   }
 
-  // Move player piece to top of ladder or bottom of snake
+
+
+  //------------------------------------------------------------------
+  // Function to move player piece to top of ladder or bottom of snake
+
+
   function newPositionAfterSnakeOrLadder(array, alert){
     array.forEach(snklad => {
       if (player1Position === snklad.start &&
@@ -149,7 +177,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+
+  //------------------------------------------------------------------
   // remove player pieces from board ready for next roll of the dice
+
+
   function clearPreviousSquare(){
     if(squareToMoveTo) {
       removePlayer1FromSquare()
@@ -158,6 +190,12 @@ document.addEventListener('DOMContentLoaded', () => {
       removePlayer2FromSquare()
     }
   }
+
+
+
+  //--------------------------------------------------------------------
+  //Function that generates random number between 1 and 6, and then moves player to next position after dice roll, checking for any snakes or ladders, and updating the innerHTML of h3 to display dice rolls.
+
 
   function rollDice() {
     if (player1Position >= 64 || player2Position >= 64)
@@ -183,6 +221,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
+
+
+  //---------------------------------------------------------------
+  //Function to update h2 innerHTML with the winner
+
+
   function displayWinner() {
     if (player1Position >= 64){
       h2.innerHTML = 'Player 1 Wins!'
@@ -192,6 +236,11 @@ document.addEventListener('DOMContentLoaded', () => {
       h2.innerHTML = ''
     }
   }
+
+
+
+  //-----------------------------------------------------------------
+  // Functions to add or remove the player's counters from the grid squares.
 
 
   function addPlayer1ToSquare(){
@@ -215,9 +264,19 @@ document.addEventListener('DOMContentLoaded', () => {
     squareToMoveTo2.classList.remove('player2Counter')
   }
 
+
+
+  //-----------------------------------------------------------------
+  // Event Listeners
+
+
+  startButton.addEventListener('click', hideScreen)
   dice.addEventListener('mousedown', clearPreviousSquare)
   dice.addEventListener('mouseup', rollDice)
   newGamebtn.addEventListener('click', chooseBoard)
 
+
+
+  //------------------------------------------------------------------
 
 })
