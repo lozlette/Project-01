@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     player1Position = 0
     player2Position = 0
     h2.innerHTML = ''
+    h3.innerHTML = ''
   }
 
   //function randomly chooses a game board from 8 arrays
