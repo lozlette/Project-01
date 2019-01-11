@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dice = document.querySelector('.dice-button')
   const newGamebtn = document.querySelector('.new-game')
+  const quitbtn = document.querySelector('.quit')
   const h2 = document.querySelector('.snakeLadderAlert')
   const h3 = document.querySelector('h3')
   const width = 8
@@ -102,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function playLadderAudio(){
     ladderAudio.play()
-    console.log('function working')
   }
 
   function playSnakeAudio(){
@@ -267,6 +267,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   //-----------------------------------------------------------------
+  // Function to reload page when user presses quit button
+
+
+  function refreshPage(){
+    location.reload()
+  }
+
+
+  //-----------------------------------------------------------------
   // Event Listeners
 
 
@@ -274,6 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
   dice.addEventListener('mousedown', clearPreviousSquare)
   dice.addEventListener('mouseup', rollDice)
   newGamebtn.addEventListener('click', chooseBoard)
+  quitbtn.addEventListener('click', refreshPage)
 
 
 
