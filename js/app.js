@@ -120,11 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function snakeAlert(){
+    if (player1Position >= 64 || player2Position >= 64)
+      return
     h2.innerHTML = 'Bad Luck! Go to the bottom of the snake'
     playSnakeAudio()
   }
 
   function ladderAlert(){
+    if (player1Position >= 64 || player2Position >= 64)
+      return
     h2.innerHTML = 'Congratulations! You get to climb the ladder!'
     playLadderAudio()
   }
