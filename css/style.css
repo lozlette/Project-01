@@ -17,7 +17,7 @@ h3 {
 
 body {
   text-align: center;
-  background-image: url('./images/blacksnakeskin.png');
+  background-image: url('../../images/blacksnakeskin.png');
   background-repeat: no-repeat;
   font-family: 'ZCOOL KuaiLe', cursive;
   max-width: 100%;
@@ -30,7 +30,7 @@ body {
   align-items: center;
   border: 1px solid #FFFFFF;
   margin: auto;
-  background-image: url('./images/snakeskin.jpg');
+  background-image: url('../../images/snakeskin.jpg');
 }
 
 .alerts {
@@ -47,19 +47,19 @@ font-size: 20px;
 }
 
 .snake {
-  background-image: url('./images/snake.gif');
+  background-image: url('../../images/snake.gif');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .ladder {
-  background-image: url('./images/ladder.gif');
+  background-image: url('../../images/ladder.gif');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .player1Counter {
-  background-image: url('./images/player1.jpg');
+  background-image: url('../../images/player1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid #FFFFFF;
@@ -67,7 +67,7 @@ font-size: 20px;
 
 
 .player2Counter {
-  background-image: url('./images/player2.jpg');
+  background-image: url('../../images/player2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid #FFFFFF;
@@ -101,7 +101,7 @@ button:focus {
 .startScreen {
   height: 130vh;
   width: 100vw;
-  background-image: url('./images/blacksnakeskin.png');
+  background-image: url('../../images/blacksnakeskin.png');
   position: absolute;
   background-repeat:no-repeat;
   top: 0;
