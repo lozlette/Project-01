@@ -97,3 +97,7 @@ Writing the logic to generate new gameboards really opened up the game to new po
 ## Future features
 
 Changing the size of the boards, and adding more snakes into each new board would add levels to the game. This would also need a scoring function.
+
+Animated game pieces.
+
+I would also like to refactor the Roll the Dice function.
