@@ -17,7 +17,7 @@ h3 {
 
 body {
   text-align: center;
-  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/He5nLUEg-j2n3bghg/videoblocks-black-snake-skin-background-close-up-4k-high-quality-footage_r1bdafuiz_thumbnail-full01.png);
+  background-image: url('./images/blacksnakeskin.png');
   background-repeat: no-repeat;
   font-family: 'ZCOOL KuaiLe', cursive;
   max-width: 100%;
@@ -30,7 +30,7 @@ body {
   align-items: center;
   border: 1px solid #FFFFFF;
   margin: auto;
-  background-image: url(https://www.rvinyl.com/Shared/Images/Product/Rwraps-reg-Snake-Skin-Vinyl-Film-Wrap-Black/Black-Snake-Skin-Vinyl-Wraps.jpg);
+  background-image: url('./images/snakeskin.jpg');
 }
 
 .alerts {
@@ -47,19 +47,19 @@ font-size: 20px;
 }
 
 .snake {
-  background-image: url(http://www.animatedimages.org/data/media/290/animated-snake-image-0016.gif);
+  background-image: url('./images/snake.gif');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .ladder {
-  background-image: url(https://cdn.dribbble.com/users/352436/screenshots/4034440/sm_cut_ladder.gif);
+  background-image: url('./images/ladder.gif');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .player1Counter {
-  background-image: url(https://www.caseyswood.com/shoppingcart/zen-cart/bmz_cache/b/b6e69556b6d41dfec44a1a4b2434650a.image.220x220.jpg);
+  background-image: url('./images/player1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid #FFFFFF;
@@ -67,7 +67,7 @@ font-size: 20px;
 
 
 .player2Counter {
-  background-image: url(http://cherie-taylor.com/wp-content/gallery/Animation/final_pawn.jpeg);
+  background-image: url('./images/player2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid #FFFFFF;
@@ -101,7 +101,7 @@ button:focus {
 .startScreen {
   height: 130vh;
   width: 100vw;
-  background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/He5nLUEg-j2n3bghg/videoblocks-black-snake-skin-background-close-up-4k-high-quality-footage_r1bdafuiz_thumbnail-full01.png);
+  background-image: url('./images/blacksnakeskin.png');
   position: absolute;
   background-repeat:no-repeat;
   top: 0;

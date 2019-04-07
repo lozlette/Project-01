@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // -------------------------------------------------------------
-  //function and event listener to hide start screen when player clicks 'Play' button
+  //function to hide start screen when player clicks 'Play' button
 
 
   function hideScreen(){

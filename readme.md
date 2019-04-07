@@ -86,7 +86,7 @@ Lastly I made the game mobile responsive, and added styling and HTML5 Audio.
 
 One challenge was changing the players position to reflect that they had just moved up a ladder or down a snake, and making the next roll of the dice take this new position into account.
 
-Another challenge was refactoring to allow for the new game boards and making all existing logic work for the new game board as well as the first one.
+Another challenge was refactoring to allow for the new game boards and making all existing logic work for the new game boards as well as the first one.
 
 ## Wins
 
