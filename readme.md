@@ -67,16 +67,20 @@ Snakes and Ladders is based on the ancient Indian board game of the same name. T
 I started by creating the grid in JS, but then changed this to an HTML grid using flex-box, in order to add data-attributes (of numbers from 1-64) to each square of the grid div. I also added classes of snake or ladder to relevant squares to create the snakes and ladders on the board.
 
 I then made a function to roll the dice, which randomly chooses a number between 1 and 6, and updated the player's position by adding on the dice roll. The players pieces were moved to the relevant new square by adding the classes of the players pieces to the squares with the relevant data-id.
+![rolldicefunction](https://user-images.githubusercontent.com/7090684/55726267-46c38380-5a07-11e9-8026-575837379dc2.png)
 
 Next I made the snake or ladder function to move the players piece to the top of a ladder or bottom of a snake. This function checked if the data-id matched the data-id of the top of the snake or bottom of a ladder. Once it found a match it would update the player position, and add this square's data-id number on to the next dice roll.
 
 I then decided to wrap the snake or ladder function in a set timer, so that there would be a short delay before the player's piece moves from the top to the bottom of a snake, and the bottom to top of a ladder.
+![settimeout](https://user-images.githubusercontent.com/7090684/55726141-0532d880-5a07-11e9-9cc7-053649389426.png)
 
 Next I added in the logic to add in Player 2 (the computer) and added the snake or ladder, and winner alerts.
 
 I refactored my game at this point and created an array of objects to contain the top and bottom values of each snake or ladder.
+![Screenshot 2019-04-08 at 14 00 51](https://user-images.githubusercontent.com/7090684/55726011-c1d86a00-5a06-11e9-964b-1690fd3c2f5c.png)
 
 As the game continued to develop I decided to add an extra feature of an option to choose a new game, with a new game board, with different layout of snakes and ladders. In order to do this I changed my grid setup back to JS. I added the data-id's to each square with a for loop, and then looped through each array of snakes and ladders to add the classes of snake or ladder to the grid squares.
+![Screenshot 2019-04-08 at 13 57 55](https://user-images.githubusercontent.com/7090684/55725874-7e7dfb80-5a06-11e9-887b-cf302367e56c.png)
 
 I then created a function to create the new game boards by randomly choosing one of 6 layouts (arrays) in the snake and ladder array of arrays. I refactored my functions to allow for the new game board layouts.
 
@@ -93,6 +97,7 @@ Another challenge was refactoring to allow for the new game boards and making al
 Changing my grid to JS and creating the array of objects to hold the snake and ladder square data-id's really helped to refactor my code.
 
 Writing the logic to generate new gameboards really opened up the game to new possibilities.
+![function chooseboard](https://user-images.githubusercontent.com/7090684/55726429-af126500-5a07-11e9-9a1f-dfa7ebdce619.png)
 
 ## Future features
 
@@ -100,4 +105,4 @@ Changing the size of the boards, and adding more snakes into each new board woul
 
 Animated game pieces.
 
-I would also like to refactor the Roll the Dice function.
+I would also refactor my functions.
